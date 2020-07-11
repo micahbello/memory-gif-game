@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gif Memory Game</title>
+</head>
+<body>
+	<h1>Gif Memory Game</h1>
+
+	<div>
+		<div id='gif'></div>
+
+		<figure class='gif-figure'>
+			<img src="">
+		</figure>
+		
+		<figure class='gif-figure'>
+			<img src="">
+		</figure>
+		
+		<figure class='gif-figure'>
+			<img src="">
+		</figure>
+		
+		<figure class='gif-figure'>
+			<img src="">
+		</figure>
+		
+		<figure class='gif-figure'>
+			<img src="">
+		</figure>
+		
+		<figure class='gif-figure'>
+			<img src="">
+		</figure>
+		
+		<figure class='gif-figure'>
+			<img src="">
+		</figure>
+		
+		<figure class='gif-figure'>
+			<img src="">
+		</figure>
+		
+		<figure class='gif-figure'>
+			<img src="">
+		</figure>
+		
+		<figure class='gif-figure'>
+			<img src="">
+		</figure>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+
+		$.ajax({
+			url:"https://api.giphy.com/v1/gifs/random?api_key=RO9th90ycIJIKwggbLnRVARPCjqw45up&limit=32",
+			type: 'GET',
+			success: (result)=>{
+				// debugger;
+				let newImage = $("<img src='" + result.data.images.downsized.url + "'/>");
+				$('#gif').html(newImage);
+			}
+		});
+	</script>
+</body>
+</html>
