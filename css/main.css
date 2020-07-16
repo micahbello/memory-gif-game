@@ -1,0 +1,14 @@
+#cards-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card-figure {
+  border: 1px solid black;
+  /* height: 300px;
+  width: 300px; */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

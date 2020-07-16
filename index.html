@@ -2,67 +2,16 @@
 <html>
 <head>
 	<title>Gif Memory Game</title>
+
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/main.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="./gifRelated.js" charset="utf-8"></script>
 </head>
 <body>
 	<h1>Gif Memory Game</h1>
 
-	<div>
-		<div id='gif'></div>
-
-		<figure class='gif-figure'>
-			<img src="">
-		</figure>
-		
-		<figure class='gif-figure'>
-			<img src="">
-		</figure>
-		
-		<figure class='gif-figure'>
-			<img src="">
-		</figure>
-		
-		<figure class='gif-figure'>
-			<img src="">
-		</figure>
-		
-		<figure class='gif-figure'>
-			<img src="">
-		</figure>
-		
-		<figure class='gif-figure'>
-			<img src="">
-		</figure>
-		
-		<figure class='gif-figure'>
-			<img src="">
-		</figure>
-		
-		<figure class='gif-figure'>
-			<img src="">
-		</figure>
-		
-		<figure class='gif-figure'>
-			<img src="">
-		</figure>
-		
-		<figure class='gif-figure'>
-			<img src="">
-		</figure>
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript">
-
-
-		$.ajax({
-			url:"https://api.giphy.com/v1/gifs/random?api_key=RO9th90ycIJIKwggbLnRVARPCjqw45up&limit=32",
-			type: 'GET',
-			success: (result)=>{
-				// debugger;
-				let newImage = $("<img src='" + result.data.images.downsized.url + "'/>");
-				$('#gif').html(newImage);
-			}
-		});
-	</script>
+	<section id='cards-section'></section>
 </body>
 </html>
