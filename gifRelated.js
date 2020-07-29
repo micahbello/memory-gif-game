@@ -19,6 +19,7 @@ function retrieveGifUrl(){
 }
 
 function fillArray(){
+  showLoadingScreen();
   if (arrayOfGifUrls.length < numberOfSets) {
     retrieveGifUrl()
     .then((results)=> {
@@ -33,29 +34,68 @@ function fillArray(){
 function fillDOM() {
   //copy the array and add it to orignal
   arrayOfGifUrls = arrayOfGifUrls.concat(arrayOfGifUrls);
+
   //randomize
   shuffleArray(arrayOfGifUrls);
 
   for (let i = 0; i < arrayOfGifUrls.length; i++) {
-    let $newImage = $('<figure></figure>')
-    $newImage.css({'background-image': `url('${arrayOfGifUrls[i]}')`})
-    $('#cards-section').append($newImage);
+    createCardElementSet(i);
   }
 
   setStylingOnCards();
+  hideLoadingScreen();
 }
 
 function setStylingOnCards() {
-  $('figure').addClass('card-figure');
-
   /*I want the cards to always display in 2 rows.*/
   /*Therefore, width for each card will be 100/(numberOfSets)*/
-  $('.card-figure').width(`${100/(numberOfSets)}%`);
-  $('.card-figure').height(100);
+  $('.card-display').width(`${100/(numberOfSets)}%`);
+  $('.card-display').height(100);
+
+  // $('figure').addClass('card-figure');
+  // /*I want the cards to always display in 2 rows.*/
+  // /*Therefore, width for each card will be 100/(numberOfSets)*/
+  // $('.card-figure').width(`${100/(numberOfSets)}%`);
+  // $('.card-figure').height(100);
+
 }
 
 function setUpGame(){
   fillArray();
+}
+
+function showLoadingScreen() {
+  $('#loading-screen').show();
+}
+
+function hideLoadingScreen() {
+  setTimeout(function(){
+    $('#loading-screen').hide();
+  }, 3000); //allow the dom 3 seconds to render the images
+}
+
+function createCardElementSet(idx) {
+
+  let $newCardDisplay = $("<article class='card-display' id='article-"+ idx+"'></article>")
+  $('#cards-section').append($newCardDisplay);
+
+  let $newImage = $("<figure class='image-figure'></figure>")
+  $newImage.css({'background-image': `url('${arrayOfGifUrls[idx]}')`})
+  $("#article-" + idx).append($newImage);
+
+  let $newImageCover = $("<div class='image-cover'></div>")
+  $newImage.css({'background-image': `url('${arrayOfGifUrls[idx]}')`})
+  $("#article-" + idx).append($newImageCover);
+
+  //set event listeners
+  $($newImage).click(function(){
+    $($newImageCover).show();
+  })
+
+  $($newImageCover).click(function(){
+    $(this).hide();
+  })
+
 }
 
 //============================
