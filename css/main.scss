@@ -21,6 +21,10 @@ $secondary-font-family: 'Prompt', sans-serif;
 /* ===========>
 |global
 <=========== */
+.hide {
+  display: none;
+}
+
 .main-container {
   border: 1px solid red;
   margin: 0 1em;
