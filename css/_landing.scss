@@ -1,0 +1,60 @@
+/* NOTE: MOBILE FIRST CSS */
+
+ /* BreakPoints (follows BootStrap 4 pattersn)
+ xs = Extra small <576px
+ sm = Small ≥576px
+ md = Medium ≥768px
+ lg = Large ≥992px
+ xl = Extra large ≥1200px */
+
+/* NOTE: Search | to quickly go to main styling divisions */
+
+/* @import '_variables'; */
+
+/* ===========>
+|global
+<=========== */
+
+/* ===========>
+|general reusable classes
+<=========== */
+
+/* ===========>
+|general
+<=========== */
+.landing-main h1, h2 {
+  text-align: center;;
+}
+
+.settings-form {
+  border: 1px solid blue;
+  border-radius: 10px;
+  text-align: center;
+
+  .settings-form-options {
+    display: flex;
+  }
+
+  .settings-form-options > section {
+    border: 1px solid red;
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type='submit'] {
+    background: white;
+  }
+}
+
+/* ===========>
+|structure
+<=========== */
+
+
+/* ===========>
+|buttons
+<=========== */

@@ -1,0 +1,58 @@
+/* NOTE: MOBILE FIRST CSS */
+
+ /* BreakPoints (follows BootStrap 4 pattersn)
+ xs = Extra small <576px
+ sm = Small ≥576px
+ md = Medium ≥768px
+ lg = Large ≥992px
+ xl = Extra large ≥1200px */
+
+/* NOTE: Search | to quickly go to main styling divisions */
+
+@import 'landing';
+@import 'cards-display';
+
+/* ===========>
+|variables
+<=========== */
+$primary-font-family: 'Sriracha', cursive;
+$secondary-font-family: 'Prompt', sans-serif;
+
+/* ===========>
+|global
+<=========== */
+.main-container {
+  border: 1px solid red;
+  margin: 0 1em;
+}
+
+/* ===========>
+|general reusable classes
+<=========== */
+
+
+/* ===========>
+|general
+<=========== */
+h1 {
+  font-family: $primary-font-family;
+  font-size: 3em;
+  padding: .3em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h2, p, label, input {
+  font-family: $secondary-font-family;
+}
+
+/* ===========>
+|structure
+<=========== */
+
+
+/* ===========>
+|buttons
+<=========== */

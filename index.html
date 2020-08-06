@@ -3,14 +3,54 @@
 <head>
 	<title>Gif Match</title>
 
-	<link rel="stylesheet" href="./css/reset.css">
-	<link rel="stylesheet" href="./css/main.css">
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Prompt&family=Sriracha&display=swap" rel="stylesheet">
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="./gifRelated.js" charset="utf-8"></script>
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="./css/reset.min.css">
+	<link rel="stylesheet" href="./css/main.min.css">
 </head>
 <body>
-	<div class="loading-screen" id="loading-screen">
+	<div class="main-container">
+		<main class="landing-main" id="landing-main">
+			<h1>GIF MATCH</h1>
+
+			<h2>Test your memory skills with gifs...</h2>
+
+			<form class="settings-form" id="play-form">
+				<p>Choose your settings</p>
+
+				<div class="settings-form-options">
+
+					<section>
+						<label for="">sets of cards</label>
+						<select>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+						</select>
+					</section>
+
+					<section>
+						<label for="">seconds to view before start</label>
+						<select>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
+					</section>
+
+				</div>
+
+				<input type="submit" value="play"/>
+			</form>
+		</main>
+	</div>
+
+	<!-- <div class="loading-screen" id="loading-screen">
 		<p class="loading-text">...setting up the game</p>
 	</div>
 
@@ -20,8 +60,14 @@
 		<section id='cards-section'></section>
 
 		<section>
-			
+
 		</section>
-	</main>
+	</main> -->
+
+	<!-- scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="./js/entry.js"></script>
+
+	<!-- <script src="./gifRelated.js" charset="utf-8"></script> -->
 </body>
 </html>

@@ -1,0 +1,1 @@
+.landing-main h1,h2{text-align:center}.settings-form{border:1px solid blue;border-radius:10px;text-align:center}.settings-form .settings-form-options{display:flex}.settings-form .settings-form-options>section{border:1px solid red;width:50%;display:flex;flex-direction:column;align-items:center;justify-content:center}.settings-form input[type='submit']{background:white}
