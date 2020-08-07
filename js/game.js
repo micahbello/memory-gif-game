@@ -4,6 +4,9 @@ class Game {
     this.cardsInfoObject = {};
     this.inplay = false;
     this.completed = false;
+    this.turnedCardNumber = null;
+    this.attemptsCount = 0;
+    this.resolvedPairs = 0;
   }
 
   shuffleArray(array) {
@@ -24,10 +27,38 @@ class Game {
     doubledArray.forEach((url, i) => {
       this.cardsInfoObject[i] = {
         url: url,
-        turned: false,
         resolved: false
       }
     });
+  }
+
+  isGameOver() {
+    return this.resolvedPairs === this.arrayOfGifUrls.length;
+  }
+
+  handleCoverClick(coverNumber) {
+    if (this.turnedCardNumber === null) { //first turned card
+      this.turnedCardNumber = coverNumber;
+    } else { //second turned card
+      let turnedCardNumber = this.turnedCardNumber;
+
+      if (this.cardsInfoObject[turnedCardNumber].url === this.cardsInfoObject[coverNumber].url) { //match
+        console.log('Match');
+        this.turnedCardNumber = null;
+
+        this.cardsInfoObject[turnedCardNumber].resolved = true;
+        this.cardsInfoObject[coverNumber].resolved = true;
+        this.resolvedPairs++;
+      } else { //no match
+        this.turnedCardNumber = null;
+      }
+
+      this.attemptsCount++;
+    }
+
+    if (this.isGameOver()) {
+      console.log("over");
+    }
   }
 }
 
